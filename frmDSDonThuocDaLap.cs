@@ -41,8 +41,57 @@ namespace QLPK
         }
         private void btnLapDTMoi_Click(object sender, EventArgs e)
         {
-            new frmLapDonThuoc().ShowDialog();
+            new frmDSBNChuaCoDonThuoc().ShowDialog();
             LoadDonThuocDaLap();
+        }
+
+        private void dgvDSDonThuocDaLap_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var madonthuoc = dgvDSDonThuocDaLap.Rows[e.RowIndex].Cells["MADT"].Value.ToString();
+                new frmLapDonThuoc(madonthuoc).ShowDialog();
+                LoadDonThuocDaLap();
+            }
+        }
+
+        private void btnThemMoiCT_DonThuoc_Click(object sender, EventArgs e)
+        {
+            new frmLapDonThuoc(null).ShowDialog();
+            LoadDonThuocDaLap();
+        }
+
+        private void dgvDSDonThuocDaLap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == dgvDSDonThuocDaLap.Columns["btnXoa"].Index)
+                {
+                    if (
+                        MessageBox.Show("Bạn chắc chắn muốn xóa đơn thuốc: " + dgvDSDonThuocDaLap.Rows[e.RowIndex].Cells["MADT"].Value.ToString() + " ?",
+                        "Xác nhận xóa!!!",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                        ) == DialogResult.Yes)
+                    {
+                        var maDonThuoc = dgvDSDonThuocDaLap.Rows[e.RowIndex].Cells["MADT"].Value.ToString();
+                        var sql = "DeleteCT_DonThuoc";
+                        var lstPara = new List<CustormParameter>()
+                    {
+                        new CustormParameter
+                        {
+                            key = "@MADT",
+                            value = maDonThuoc
+                        }
+                    };
+
+                        new Database().ExCute(sql, lstPara);
+                        MessageBox.Show("Xóa thuốc thành công!");
+                        LoadDonThuocDaLap();
+                    }
+
+                }
+            }
         }
     }
 }

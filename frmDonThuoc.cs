@@ -113,7 +113,7 @@ namespace QLPK
             {
                 if (string.IsNullOrEmpty(madt))//nếu thêm mới
                 {
-                    MessageBox.Show("Thêm mới đơn thuốc thành công");
+                    MessageBox.Show("Thêm mới thông tin đơn thuốc thành công");
                 }
                 else//nếu cập nhật
                 {

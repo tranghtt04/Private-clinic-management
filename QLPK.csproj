@@ -126,11 +126,23 @@
     <Compile Include="frmHoaDon.Designer.cs">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSBNChuaCoDonThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSBNChuaCoDonThuoc.Designer.cs">
+      <DependentUpon>frmDSBNChuaCoDonThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLapDonThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLapDonThuoc.Designer.cs">
       <DependentUpon>frmLapDonThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDSBNChuaCoHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSBNChuaCoHoaDon.Designer.cs">
+      <DependentUpon>frmDSBNChuaCoHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLapHoaDon.cs">
       <SubType>Form</SubType>
@@ -200,8 +212,14 @@
     <EmbeddedResource Include="frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDSBNChuaCoDonThuoc.resx">
+      <DependentUpon>frmDSBNChuaCoDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLapDonThuoc.resx">
       <DependentUpon>frmLapDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSBNChuaCoHoaDon.resx">
+      <DependentUpon>frmDSBNChuaCoHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLapHoaDon.resx">
       <DependentUpon>frmLapHoaDon.cs</DependentUpon>
